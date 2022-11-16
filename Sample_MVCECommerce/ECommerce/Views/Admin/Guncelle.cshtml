@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Product
+@{
+    ViewData["Title"] = "Guncelle";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>ÜRÜN GÜNCELLE</h1>
+
+<form asp-action="Guncelle" asp-controller="Admin" method="post">
+    <div style="display:none" class="mb-3">
+        <label  class="form-label">ÜRÜN ID </label>
+        <input  readonly type="text" class="form-control" asp-for="product_Id">
+        </div>
+        <div class="mb-3">
+        <label  class="form-label"> ÜRÜN ADI</label>
+        <input type="text" class="form-control" asp-for="product_Name">
+        </div>
+    <div class="mb-3">
+        <label class="form-label"> ÜRÜN FİYATI</label>
+        <input type="text" class="form-control" asp-for="product_Price">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">ÜRÜN URL </label>
+        <input type="text" class="form-control" asp-for="product_Stock">
+    </div>
+ 
+    <button type="submit" class="btn btn-primary">ÜRÜN GÜNCELLE </button>
+</form>

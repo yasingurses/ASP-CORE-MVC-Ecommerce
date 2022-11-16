@@ -1,0 +1,57 @@
+﻿@using EntityLayer;
+@model List<User>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>KULLANICI LİSTESİ</h1>
+<div><a asp-action="Ekle" asp-controller="User" class="btn btn-primary">KULLANICI EKLE</a></div>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Default Table</h5>
+
+                    <!-- Default Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kullanıcı ID</th>
+                                <th scope="col">Kullanıcı Adı</th>
+                                <th scope="col">Kullanıcı Şifresi </th>
+                                <th scope="col">Kullanıcı Rolü</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var a in Model)
+                            {
+                                <tr>
+                                    <td>@a.UserID</td>
+                                    <td>@a.Username</td>
+                                    <td>@a.UserPassword</td>
+                                    <td>@a.UserRole</td>
+                                    <td>
+                                        <a onclick="return confirm('Silmek istediğinize eminmisiniz?');" asp-controller="User" asp-action="Sil" asp-route-id="@a.UserID" class="btn btn-danger">sil</a>
+
+                                        <a asp-controller="User" asp-action="Guncelle" asp-route-id="@a.UserID" class="btn btn-warning">Güncelle</a>
+                                    </td>
+                                    <td>
+                                    </td>
+
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <!-- End Default Table Example -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

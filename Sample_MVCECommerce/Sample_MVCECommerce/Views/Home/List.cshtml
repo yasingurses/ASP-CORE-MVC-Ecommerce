@@ -1,0 +1,29 @@
+﻿
+@using EntityLayer
+@model List<Product>
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Hospital Name</th>
+            <th>Hospital City</th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+
+    {
+        <tbody>
+            <tr>
+                <td>@item.product_Name</td>
+                <td>@item.product_Price</td>
+                <td>@item.product_Stock</td>
+            </tr>
+        </tbody>
+
+    }
+
+
+
+</table>

@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Category
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Ekle</h1>
+<form asp-action="Ekle" asp-controller="Category" method="post">
+    <div class="mb-3">
+        <label class="form-label">KATEGORİ ADI</label>
+        <input asp-for="category_Name" type="text" class="form-control">
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">KATEGORİ İÇERİĞİ</label>
+        <input type="text" class="form-control" asp-for="category_Content">
+    </div>
+
+    <button type="submit" class="btn btn-primary">KATEGORİ EKLE</button>
+</form>
+
